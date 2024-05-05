@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -37,11 +39,11 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.5.1'
+        kotlinCompilerExtensionVersion '1.5.13'
     }
     packaging {
         resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            it.excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
 }
@@ -66,5 +68,13 @@ dependencies {
 
     //Splash Api
     implementation libs.androidx.core.splashscreen
+
+    // region dagger-hilt di
+    implementation libs.hilt.android.v249
+    implementation libs.androidx.hilt.work
+    ksp(libs.hilt.compiler.v249)
+    // hilt compose
+    implementation libs.androidx.hilt.navigation.compose
+    // endregion dagger-hilt di
 
 }
