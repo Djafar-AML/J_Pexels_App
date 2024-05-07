@@ -1,10 +1,8 @@
 package com.example.j_pexels_app.domain.repo
 
-import androidx.paging.PagingData
-import com.example.j_pexels_app.domain.model.Photo
-import kotlinx.coroutines.flow.Flow
+import com.example.j_pexels_app.domain.model.PhotoDetails
 
 interface PhotoRepo {
-    fun getPhotos(): Flow<PagingData<Photo>>
+    suspend fun getPhotoDetails(photoId: Long): PhotoDetails
 
 }

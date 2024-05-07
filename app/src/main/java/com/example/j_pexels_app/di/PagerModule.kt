@@ -5,7 +5,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import com.example.j_pexels_app.data.local.PhotoDatabase
 import com.example.j_pexels_app.data.local.PhotoEntity
-import com.example.j_pexels_app.data.remote.PexelsApi
+import com.example.j_pexels_app.data.remote.api.PexelsApi
 import com.example.j_pexels_app.data.remote.mediator.PexelsRemoteMediator
 import dagger.Module
 import dagger.Provides

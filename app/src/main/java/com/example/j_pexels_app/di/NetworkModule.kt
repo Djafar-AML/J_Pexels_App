@@ -2,7 +2,7 @@ package com.example.j_pexels_app.di
 
 import com.example.j_pexels_app.BuildConfig
 import com.example.j_pexels_app.constants.PexelsConsts.TIMEOUT_RETROFIT
-import com.example.j_pexels_app.data.remote.PexelsApi
+import com.example.j_pexels_app.data.remote.api.PexelsApi
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module

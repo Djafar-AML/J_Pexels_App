@@ -8,7 +8,7 @@ import androidx.room.withTransaction
 import com.example.j_pexels_app.data.local.PhotoDatabase
 import com.example.j_pexels_app.data.local.PhotoEntity
 import com.example.j_pexels_app.data.mappers.toPhotoEntity
-import com.example.j_pexels_app.data.remote.PexelsApi
+import com.example.j_pexels_app.data.remote.api.PexelsApi
 
 
 @OptIn(ExperimentalPagingApi::class)

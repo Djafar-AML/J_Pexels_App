@@ -51,7 +51,10 @@ fun NavGraph(
             route = Route.PhotoDetails.route,
         ) {
             val photoId = navController.previousBackStackEntry?.savedStateHandle?.get<Long>(PHOTO_ID) ?: -1L
-            PhotoDetailsScreen(photoId = photoId)
+            PhotoDetailsScreen(
+                photoId = photoId,
+                viewModel = hiltViewModel()
+            )
         }
 
     }
