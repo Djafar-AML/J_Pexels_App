@@ -26,6 +26,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'BASE_URL', '"https://api.pexels.com/v1/"'
+        }
+        debug {
+            buildConfigField 'String', 'BASE_URL', '"https://api.pexels.com/v1/"'
         }
     }
     compileOptions {
@@ -37,6 +41,7 @@ android {
     }
     buildFeatures {
         compose true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion '1.5.13'
@@ -114,5 +119,6 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation libs.androidx.room.paging
 
+    implementation libs.gson
 
 }
