@@ -1,7 +1,6 @@
 package com.example.j_pexels_app.presentation.item
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
-import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -21,7 +20,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,13 +38,13 @@ fun PhotoItem(
 ) {
 
     photo ?: return
-    val context = LocalContext.current
+
+    fun onPhotoClick(photo: Photo) {
+        onItemClick(photo)
+    }
 
     Card(
-        onClick = {
-            Toast.makeText(context, "photo id is: ${photo.id}", Toast.LENGTH_SHORT).show()
-            onItemClick(photo)
-        },
+        onClick = { onPhotoClick(photo) },
         modifier = modifier,
     ) {
 

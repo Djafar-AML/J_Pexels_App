@@ -9,4 +9,6 @@ object PexelsConsts {
 
     const val TIMEOUT_RETROFIT = 30L
 
+    const val PHOTO_ID = "photoId"
+
 }

@@ -18,16 +18,21 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.j_pexels_app.domain.model.Photo
 import com.example.j_pexels_app.presentation.item.ErrorItem
 import com.example.j_pexels_app.presentation.item.PhotoItem
+import com.example.j_pexels_app.presentation.vm.PhotosViewModel
 
 
 @Composable
-fun PhotoScreen(
+fun PhotosScreen(
     modifier: Modifier = Modifier,
-    photos: LazyPagingItems<Photo>
+    photosViewModel: PhotosViewModel,
+    onPhotoClick: (Photo) -> Unit,
 ) {
+
+    val photos = photosViewModel.photosPagingFlow.collectAsLazyPagingItems()
 
     val context = LocalContext.current
 
@@ -65,7 +70,7 @@ fun PhotoScreen(
                     PhotoItem(
                         modifier = Modifier.fillMaxWidth(),
                         photo = photoItem,
-                        onItemClick = {},
+                        onItemClick = onPhotoClick,
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))
