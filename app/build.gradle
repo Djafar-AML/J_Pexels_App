@@ -121,4 +121,6 @@ dependencies {
 
     implementation libs.gson
 
+    // collectAsStateWithLifecycle
+    implementation libs.androidx.lifecycle.runtime.compose
 }
