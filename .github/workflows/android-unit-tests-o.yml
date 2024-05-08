@@ -32,12 +32,16 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    env: 
-      JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '21'
+      
       - name: Run Lint
         run: ./gradlew lintDebug
 
