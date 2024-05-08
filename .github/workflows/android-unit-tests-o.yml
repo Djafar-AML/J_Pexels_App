@@ -18,6 +18,9 @@ jobs:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '21'
       
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+      
       - name: Run Lint
         run: ./gradlew lintDebug
 
@@ -50,7 +53,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: app/build/reports/tests/testDebugUnitTest/index.html
+          path: app/build/reports/tests/testDebugUnitTest/
 
 
   
