@@ -22,6 +22,21 @@ android {
         }
     }
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    tasks.register('customTestDebugUnitTest', Test) {
+        useJUnitPlatform()
+        include '**/*Test.class'
+        reports {
+            junitXml.enabled = true
+            html.enabled = true
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
