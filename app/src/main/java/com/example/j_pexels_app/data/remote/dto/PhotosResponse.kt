@@ -25,7 +25,7 @@ data class PhotosResponse(
         @Json(name = "photographer_url")
         val photographerUrl: String = "",
         @Json(name = "photographer_id")
-        val photographerId: Int = 0,
+        val photographerId: Long = 0,
         @Json(name = "avg_color")
         val avgColor: String = "",
         @Json(name = "src")

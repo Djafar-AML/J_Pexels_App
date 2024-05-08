@@ -7,7 +7,7 @@ data class PhotoDetails(
     val url: String = "",
     val photographer: String = "",
     val photographerUrl: String = "",
-    val photographerId: Int = 0,
+    val photographerId: Long = 0,
     val avgColor: String = "",
     val imageSource: ImageSource = ImageSource(),
     val liked: Boolean = false,
