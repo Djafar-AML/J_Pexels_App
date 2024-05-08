@@ -6,7 +6,29 @@ on:
       - master
 
 jobs:
-  test:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '21'
+      
+      - name: Run Lint
+        run: ./gradlew lintDebug
+
+      - name: Upload html test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lintIndex.html
+          path: app/build/reports/lint-results-debug.htm
+          
+  unit-test:
+    needs: [lint]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -28,27 +50,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: app/build/reports/customTestDebugUnitTestResults.xml
+          path: app/build/reports/tests/testDebugUnitTest/index.html
 
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin' # See 'Supported distributions' for available options
-          java-version: '21'
-      
-      - name: Run Lint
-        run: ./gradlew lintDebug
-
-      - name: Upload html test report
-        uses: actions/upload-artifact@v4
-        with:
-          name: lintIndex.html
-          path: app/build/reports/lint-results-debug.html
 
   
