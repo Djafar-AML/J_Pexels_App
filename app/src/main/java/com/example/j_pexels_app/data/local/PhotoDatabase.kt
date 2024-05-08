@@ -8,6 +8,7 @@ import androidx.room.TypeConverters
 @Database(
     entities = [PhotoEntity::class],
     version = 1,
+    exportSchema = false,
 )
 @TypeConverters(ImageSourceTypeConverter::class)
 abstract class PhotoDatabase : RoomDatabase() {
