@@ -139,4 +139,11 @@ dependencies {
 
     // collectAsStateWithLifecycle
     implementation libs.androidx.lifecycle.runtime.compose
+
+    // mockito test
+    testImplementation libs.mockito.mockito.core
+    testImplementation libs.mockito.kotlin
+    testImplementation libs.mockito.inline
+
+
 }

@@ -26,6 +26,9 @@ kotlinxCoroutinesTest = "1.8.0"
 coilCompose = "2.6.0"
 converterMoshi = "2.11.0"
 gson = "2.10.1"
+mockitoCoreVersion = "5.7.0"
+mockitoInline = "5.2.0"
+mockitoKotlin = "5.2.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -70,6 +73,10 @@ androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "ro
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleRuntimeKtx" }
+
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+mockito-mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
