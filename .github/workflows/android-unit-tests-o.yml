@@ -29,3 +29,20 @@ jobs:
         with:
           name: test-results
           path: app/build/reports/tests/customTestDebugUnitTestResults.xml
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Lint
+        run: ./gradlew lintDebug
+
+      - name: Upload html test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: lintIndex.html
+          path: app/build/reports/lint-results-debug.html
+
+  
