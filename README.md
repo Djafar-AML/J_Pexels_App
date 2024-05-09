@@ -22,6 +22,14 @@
 
     Adopts a clean architecture approach with separate presentation, domain, and data layers for improved maintainability and scalability.
 
+  - ##### Jetpack Compose UI:
+
+      Utilizes Jetpack Compose for a declarative and efficient UI development experience, resulting in a modern and responsive user interface.
+ 
+  - ##### Dark and Light Mode Support:
+
+    Provides seamless switching between dark and light modes, adapting to the user's preferred display settings and reducing eye strain in low-light conditions.
+
   - ###### Dependency Injection:
 
     Utilizes Hilt Dagger for dependency injection, simplifying object creation and reducing boilerplate code.
@@ -42,6 +50,10 @@
 
     Includes unit test cases for key classes, ensuring code quality and stability.
     
+  - ##### Splash Screen:
+
+    Utilizes a splash screen library to provide a branded and engaging app launch experience
+  
   - ###### Modern Android Development:
 
     Embraces best practices and cutting-edge technologies for Android development.
